@@ -1,0 +1,295 @@
+:root
+{ color-scheme : dark
+
+; --font-size : 16px
+; --line-height : 1.75em
+; --margin : 3rem
+; --border-radius : 9999px
+
+; --text : #808080
+; --bg : #808080
+
+; --black : #000
+; --white : #fff
+; --true-gray : #808080
+; --near-black : #111
+; --dark-gray : #333
+; --light-gray : #aaa
+; --gray-ccc : #ccc
+
+; --red : #f62a44
+; --red-150 : #7B1522
+; --dark-red : #DD263D
+; --petals : #FF5555
+; --teal : #0cc
+; --sun : #ff3
+; --rose : #fabfab
+; --pink : #fd4b7a
+; --purple : #dda1c5
+; --purple-neon : #c0c
+; --magenta : #f0f
+
+; --yellow : #f4e7a3
+; --yellow-150 : #7A7351
+; --light-yellow : #e6da74
+
+; --peach : #FDDEC6
+; --honey : #FF9A18
+
+; --blue : #04b0fa
+; --light-blue : #82D8FD
+
+; --lime : #00ff33
+; --turquoise : #42f8bc
+; --light-green : #baf39e
+
+; --brown : #6e5c45
+; --light-brown : #DCB88A
+; --middle-brown : #BB956F
+}
+
+
+*
+{ all : unset
+; margin : 0
+; padding : 0
+; display : flex
+; flex-wrap : wrap
+; gap : 1rem
+; transition : all 0.125s ease-in-out
+; word-wrap : break-word
+; hyphens : auto
+; box-sizing : border-box
+; overflow : visible
+; color : var( --text )
+; line-height : var( --line-height )
+; font-family : 'Kadwa'
+              , 'DejaVu Sans'
+              , 'PT Sans'
+              , 'Helvetica'
+              , 'Helvetica Rounded'
+              , sans-serif
+}
+
+html
+{ scroll-behavior : smooth
+; font-size : var( --font-size )
+; display : unset
+}
+
+body
+{ background : var( --bg )
+; padding : 8rem 3rem
+; gap : 3rem
+}
+
+a:any-link
+, label
+, button
+, input[type=submit]
+, input[type=reset]
+, input[type=button]
+, input[type=checkbox]
+, input[type=radio]
+, input[type=file]
+, input[type=color]
+{ cursor : pointer }
+
+img
+{ overflow : hidden
+}
+
+
+.col
+{ flex-direction : column;
+}
+.c
+{ align-content : center
+; justify-content : center
+; text-align : center
+}
+.top
+{ align-content : flex-start
+}
+
+
+.box
+{ border : 0.15rem solid white
+; border-radius : var( --border-radius )
+; padding : 1rem
+; align-items : center
+; box-shadow : 0 0.5rem 1.5rem 0.125rem #0002
+; background : var( --gray-ccc )
+}
+.object
+{ box-shadow : 0 0.5rem 1.5rem 0.125rem #0002
+; background : var( --gray-ccc )
+;
+}
+.pills
+{ padding : 0
+}
+.pill
+{ background : var(--b, white)
+; color : var( --c, --text )
+; border : 0.15rem solid white
+; border-radius : var( --border-radius )
+; padding : 0.125rem 0.75rem
+; box-shadow : 0 0.5rem 1.5rem 0.125rem #0002
+; background : var( --gray-ccc )
+}
+
+.box .icon
+{ height : 3rem
+; width : 3rem
+; border : 0.075rem solid var( --bg )
+; border-radius : var( --border-radius )
+}
+
+.text
+{ padding-right : 0.5rem }
+
+footer .box
+{ border-radius : 2rem
+; flex-wrap : wrap
+}
+
+img.text
+{ border : none
+; border-radius : 0
+; height : 3rem
+; width : auto
+}
+
+input[type=radio]:checked + label > img
+{ border-width : 0.25rem
+}
+
+input[type=search]
+{ font-size : 1.5rem
+; width : 100%
+;
+}
+a:any-link
+{ color : var(--true-gray)
+}
+:is( a
+   , input
+   ):hover
+{ border-color : var( --b, #fffc )
+; background-color : #eee
+; color : #0007
+}
+:is( a
+   , input
+   ):is( :focus
+       , :active
+       )
+{ border-color : var( --b, #fffc )
+; background-color : white
+}
+
+/* colors */
+::placeholder
+{ color : var( --true-gray ) }
+
+.gray { --b : var( --true-gray ) }
+
+.graphics { --b : var( --red ) }
+.photos { --b : var( --yellow ) }
+.memes { --b : var( --lime ) }
+.web { --b : var( --blue ) }
+.typography { --b : var( --rose ) }
+.sketches { --b : var( --turquoise ) }
+.comics { --b : var( --white ) }
+.code { --b : var( --near-black ) }
+.text { --b : var( --light-gray ) }
+.audio { --b : var( --purple ) }
+.video { --b : var( --light-green ) }
+.shitposts { --b : var( --honey ) }
+.ideas { --b : var( --magenta ) }
+.colors { --b : var( --petals ) }
+.ui { --b : var( --teal ) }
+.identity { --b : var( --sun ) }
+
+.email { --b : var( --honey ) }
+.twitter { --b : var( --blue ) }
+.reddit { --b : var( --petals ) }
+.instagram { --b : var( --yellow ) }
+.behance { --b : #00ff3380 }
+.figma { --b : #6200ed80 }
+.dribbble { --b : #ea4c8980 }
+.github { --b : var( --dark-gray ) }
+.codepen { --b : var( --true-gray ) }
+.gitlab { --b : var( --true-gray ) }
+.npm { --b : #EA203980 }
+.soundcloud { --b : #f508 }
+.linkedin { --b : #0a66c280 }
+.xing { --b : #0698a080 }
+.polywork { --b : #4a1ae680 }
+.cv { --b : var( --dark-gray ) }
+.steam { --b : var( --dark-gray ) }
+.youtube { --b : #f008 }
+
+
+/* hidden */
+head
+, title
+, style
+, script
+, [hidden]
+, [type=hidden]
+, .hidden
+, summary::-webkit-details-marker
+, input[type=radio]
+, input[type=checkbox]
+{ display : none }
+
+[disabled]
+, .disabled
+{ opacity : 0.25
+; cursor : not-allowed
+; pointer-events : none
+}
+
+
+/* animations */
+@keyframes rainbow {
+00.00% { color : var( --red ) ; border-color : var( --red ) }
+16.66% { color : var( --sun ) ; border-color : var( --sun ) }
+33.33% { color : var( --lime ) ; border-color : var( --lime ) }
+50.00% { color : var( --blue ) ; border-color : var( --blue ) }
+66.66% { color : var( --rose ) ; border-color : var( --rose ) }
+83.33% { color : var( --honey ) ; border-color : var( --honey ) }
+100.0% { color : var( --red ) ; border-color : var( --red ) }
+}
+
+main
+{ min-width : 20rem
+; flex : 3
+; flex-grow : 999
+}
+
+article img
+{ width : 100%
+}
+
+nav
+{ justify-content : start
+; align-content : start
+; flex : 1
+; gap : 3rem
+; padding-top : 8rem
+}
+
+aside
+{ flex : 1
+; gap : 3rem
+; padding-top : 8rem
+}
+
+.nowrap
+{ flex-wrap : nowrap
+; word-wrap : normal
+; white-space : pre
+}

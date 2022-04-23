@@ -1,0 +1,12 @@
+title  "homepage-2022"
+description  "Homepage ’22"
+media-type  "webview"
+tags  "code"  "web"  "self"
+license  "MIT"
+homepage  "https://dym.sh/homepage-2022"
+
+
+mirrors {
+  github  "https://github.com/dym-sh/homepage-2022"
+  gitlab  "https://gitlab.com/dym-sh/homepage-2022"
+}
