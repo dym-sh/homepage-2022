@@ -161,7 +161,7 @@ img.text
 ; width : auto
 }
 
-input[type=radio]:checked + label
+input[type=radio]:checked
 { border-width : 0.25rem
 }
 
@@ -241,8 +241,6 @@ head
 , [type=hidden]
 , .hidden
 , summary::-webkit-details-marker
-, input[type=radio]
-, input[type=checkbox]
 { display : none }
 
 [disabled]
@@ -304,34 +302,30 @@ aside
 }
 
 .theme-light
-, label[for=theme-light]
+, input#theme-light
 { background-color: #fff
 }
 .theme-light .round
 { border-radius: 0.5rem
 }
 
-label[for=theme-neutral]
+input#theme-neutral
 { background-color: #ccc }
 .theme-neutral
-{ background-color: #808080 3
-}
+{ background-color: #808080 }
 .theme-neutral .round
-{ border-radius: 5rem
-}
+{ border-radius: 5rem }
 
 .theme-dark
-, label[for=theme-dark]
-{ background-color: #000
-}
+, input#theme-dark
+{ background-color: #000 }
 .theme-dark .pill
 , .theme-dark .box
 { background-color: #000
 ; border-color: transparent
 }
 .theme-dark .round
-{ border-radius: 0rem
-}
+{ border-radius: 0rem }
 .theme-dark :is( a
    , input
    ):hover
@@ -347,8 +341,29 @@ label[for=theme-neutral]
 ; color : #ccc
 }
 
+input#theme-colorful
+{ background: url('icon.png') no-repeat
+; background-size: 100% 100%
+}
 .theme-colorful
 { animation : 18s linear infinite running rainbow }
 .theme-colorful .round
-{ animation : 9s ease-in-out infinite alternate rounding
+{ animation : 9s ease-in-out infinite alternate rounding }
+
+
+@media (prefers-color-scheme: light)
+{
+
+}
+@media (prefers-color-scheme: neutral)
+{
+
+}
+@media (prefers-color-scheme: dark)
+{
+
+}
+@media (prefers-color-scheme: colorful)
+{
+
 }
