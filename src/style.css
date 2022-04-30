@@ -116,7 +116,6 @@ img
 
 .box
 { border : 0.15rem solid white
-; border-radius : var( --border-radius )
 ; padding : 1rem
 ; align-items : center
 ; box-shadow : 0 0.5rem 1.5rem 0.125rem #0002
@@ -134,7 +133,6 @@ img
 { background : var(--b, white)
 ; color : var( --c, --text )
 ; border : 0.15rem solid white
-; border-radius : var( --border-radius )
 ; padding : 0.125rem 0.75rem
 ; box-shadow : 0 0.5rem 1.5rem 0.125rem #0002
 ; background : var( --gray-ccc )
@@ -144,15 +142,13 @@ img
 { height : 3rem
 ; width : 3rem
 ; border : 0.075rem solid var( --bg )
-; border-radius : var( --border-radius )
 }
 
 .text
 { padding-right : 0.5rem }
 
 footer .box
-{ border-radius : 2rem
-; flex-wrap : wrap
+{ flex-wrap : wrap
 }
 
 img.text
@@ -162,7 +158,7 @@ img.text
 ; width : auto
 }
 
-input[type=radio]:checked + label > img
+input[type=radio]:checked + label
 { border-width : 0.25rem
 }
 
@@ -264,9 +260,11 @@ head
 83.33% { color : var( --honey ) ; background-color : var( --honey ) }
 100.0% { color : var( --red ) ; background-color : var( --red ) }
 }
-.bg-rainbow
-{ animation : 18s linear infinite running rainbow
+@keyframes rounding {
+from { border-radius : 3rem }
+  to { border-radius : 0rem }
 }
+
 
 main
 { min-width : 20rem
@@ -297,3 +295,55 @@ aside
 ; word-wrap : normal
 ; white-space : pre
 }
+
+.round
+{ border-radius : var( --border-radius )
+; overflow : hidden
+}
+
+label[for=theme-light]
+{ background-color: white }
+.theme-light
+{ background-color: white
+; --border-radius: 0.5rem
+}
+
+label[for=theme-neutral]
+{ background-color: #ccc }
+.theme-neutral
+{ background-color: #808080 }
+
+
+label[for=theme-dark]
+{ background-color: black }
+.theme-dark
+{ background-color: black
+; --border-radius: 0rem
+}
+.theme-dark .pill
+, .theme-dark .box
+{ background-color: black
+; border : none
+}
+
+
+.theme-dark :is( a
+   , input
+   ):hover
+{ box-shadow : 0 0 0 0.125rem var( --b, #808080 )
+; color: var(--true-gray)
+}
+.theme-dark :is( a
+   , input
+   ):is( :focus
+       , :active
+       )
+{ box-shadow : 0 0 0 0.125rem var( --b, #ccc )
+; color : #ccc
+}
+
+
+.theme-colorful
+{ animation : 18s linear infinite running rainbow }
+.theme-colorful .round
+{ animation : 9s ease-in-out infinite alternate rounding }
