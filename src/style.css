@@ -177,8 +177,8 @@ a:any-link
 :is( a
    , input
    ):hover
-{ background-color : var( --b, #fffc )
-; background-color : #eee
+{ border-color : var( --b, #fffc )
+; background-color : #fffe
 ; color : #0007
 }
 :is( a
@@ -186,7 +186,7 @@ a:any-link
    ):is( :focus
        , :active
        )
-{ background-color : var( --b, #fffc )
+{ border-color : var( --b, #fffc )
 ; background-color : white
 }
 
