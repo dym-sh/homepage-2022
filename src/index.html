@@ -44,13 +44,13 @@
 
   <fieldset class='round box col'>
     <input type='radio' name='theme' value='dark' id='theme-dark'>
-    <label for='theme-dark' class='round icon'></label>
+    <label for='theme-dark' class='round icon' title='Switch to a dark theme'></label>
     <input checked type='radio' name='theme' value='neutral' id='theme-neutral'>
-    <label for='theme-neutral' class='round icon'></label>
+    <label for='theme-neutral' class='round icon' title='Switch to a neutral theme'></label>
     <input type='radio' name='theme' value='light' id='theme-light'>
-    <label for='theme-light' class='round icon'></label>
+    <label for='theme-light' class='round icon' title='Switch to a light theme'></label>
     <input type='radio' name='theme' value='colorful' id='theme-colorful'>
-    <label for='theme-colorful' class='round icon'><img src='icon.png' alt='theme-colorful'></label>
+    <label for='theme-colorful' class='round icon' title='Switch to a colorful theme'><img src='icon.png' alt='theme-colorful'></label>
   </fieldset>
 
 </nav>
@@ -102,10 +102,12 @@
 
 <script>
 const body = document.querySelector('body')
+
 const switch_theme = ( e ) =>
   { body.className = e.currentTarget.id }
 
-document.querySelectorAll('input[type=radio][name=theme]')
+document
+  .querySelectorAll('input[type=radio][name=theme]')
   .forEach( e => e.onchange = switch_theme )
 </script>
 
