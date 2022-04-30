@@ -4,7 +4,7 @@
 ; --font-size : 16px
 ; --line-height : 1.75em
 ; --margin : 3rem
-; --border-radius : 9999px
+; --border-radius : 5rem
 
 ; --text : #808080
 ; --bg : #808080
@@ -266,7 +266,6 @@ from { border-radius : 3rem }
   to { border-radius : 0rem }
 }
 
-
 main
 { min-width : 20rem
 ; flex : 3
@@ -306,28 +305,34 @@ label[for=theme-light]
 { background-color: white }
 .theme-light
 { background-color: white
-; --border-radius: 0.5rem
+}
+.theme-light .round
+{ border-radius: 0.5rem
+; transition : border-radius 2s ease-in-out
 }
 
 label[for=theme-neutral]
 { background-color: #ccc }
 .theme-neutral
 { background-color: #808080 }
-
+.theme-neutral .round
+{ border-radius: 5rem
+; transition : border-radius 2s ease-in-out
+}
 
 label[for=theme-dark]
 { background-color: black }
 .theme-dark
-{ background-color: black
-; --border-radius: 0rem
-}
+{ background-color: black }
 .theme-dark .pill
 , .theme-dark .box
 { background-color: black
 ; border : none
 }
-
-
+.theme-dark .round
+{ border-radius: 0rem
+; transition : border-radius 2s ease-in-out
+}
 .theme-dark :is( a
    , input
    ):hover
@@ -343,11 +348,8 @@ label[for=theme-dark]
 ; color : #ccc
 }
 
-
 .theme-colorful
-{ animation : 18s linear infinite running rainbow
-}
+{ animation : 18s linear infinite running rainbow }
 .theme-colorful .round
 { animation : 9s ease-in-out infinite alternate rounding
-; transition-duration : 1s
 }
