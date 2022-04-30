@@ -57,6 +57,9 @@
 ; flex-wrap : wrap
 ; gap : 1rem
 ; transition : all 0.125s ease-in-out
+             , border-color 1s
+             , border-radius 2s
+             , background-color 3s
 ; word-wrap : break-word
 ; hyphens : auto
 ; box-sizing : border-box
@@ -81,7 +84,6 @@ body
 { background : var( --bg )
 ; padding : 8rem 3rem
 ; gap : 3rem
-; transition-duration : 2s
 }
 
 
@@ -116,27 +118,27 @@ img
 
 
 .box
-{ border : 0.15rem solid white
+{ border : 0.15rem solid #fff
 ; padding : 1rem
 ; align-items : center
 ; box-shadow : 0 0.5rem 1.5rem 0.125rem #0002
-; background : var( --gray-ccc )
+; background-color : var( --gray-ccc )
 }
 .object
 { box-shadow : 0 0.5rem 1.5rem 0.125rem #0002
-; background : var( --gray-ccc )
+; background-color : var( --gray-ccc )
 ;
 }
 .pills
 { padding : 0
 }
 .pill
-{ background : var(--b, white)
+{ background-color : var(--b, #fff)
 ; color : var( --c, --text )
-; border : 0.15rem solid white
+; border : 0.15rem solid #fff
 ; padding : 0.125rem 0.75rem
 ; box-shadow : 0 0.5rem 1.5rem 0.125rem #0002
-; background : var( --gray-ccc )
+; background-color : var( --gray-ccc )
 }
 
 .box .icon
@@ -184,7 +186,7 @@ a:any-link
        , :active
        )
 { border-color : var( --b, #fffc )
-; background-color : white
+; background-color : #fff
 }
 
 /* colors */
@@ -301,37 +303,34 @@ aside
 ; overflow : hidden
 }
 
-label[for=theme-light]
-{ background-color: white }
 .theme-light
-{ background-color: white
+, label[for=theme-light]
+{ background-color: #fff
 }
 .theme-light .round
 { border-radius: 0.5rem
-; transition : border-radius 2s ease-in-out
 }
 
 label[for=theme-neutral]
 { background-color: #ccc }
 .theme-neutral
-{ background-color: #808080 }
+{ background-color: #808080 3
+}
 .theme-neutral .round
 { border-radius: 5rem
-; transition : border-radius 2s ease-in-out
 }
 
-label[for=theme-dark]
-{ background-color: black }
 .theme-dark
-{ background-color: black }
+, label[for=theme-dark]
+{ background-color: #000
+}
 .theme-dark .pill
 , .theme-dark .box
-{ background-color: black
-; border : none
+{ background-color: #000
+; border-color: transparent
 }
 .theme-dark .round
 { border-radius: 0rem
-; transition : border-radius 2s ease-in-out
 }
 .theme-dark :is( a
    , input
