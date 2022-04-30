@@ -99,4 +99,40 @@
 
 </aside>
 </body>
+
+<script>
+const body = document.querySelector('body')
+
+const set_bg = ( c ) =>
+  body.style.setProperty( 'background', c )
+
+const switch_theme = ( e ) =>
+{
+set_bg( '' )
+body.classList.remove( 'bg-rainbow' )
+
+switch( e.currentTarget.id )
+{
+  case 'theme-dark':
+    set_bg( '#000' )
+    break
+  case 'theme-neutral':
+    set_bg( '#808080' )
+    break
+  case 'theme-light':
+    set_bg( '#fff' )
+    break
+  case 'theme-colorful':
+    body.classList.add( 'bg-rainbow' )
+    break
+  default:
+    body.classList.remove( 'bg-rainbow' )
+}
+
+}
+
+document.querySelectorAll('input[type=radio][name=theme]')
+  .forEach( e => e.onchange = switch_theme )
+</script>
+
 </html>

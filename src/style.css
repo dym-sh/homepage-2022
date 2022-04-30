@@ -83,6 +83,7 @@ body
 ; gap : 3rem
 }
 
+
 a:any-link
 , label
 , button
@@ -176,7 +177,7 @@ a:any-link
 :is( a
    , input
    ):hover
-{ border-color : var( --b, #fffc )
+{ background-color : var( --b, #fffc )
 ; background-color : #eee
 ; color : #0007
 }
@@ -185,7 +186,7 @@ a:any-link
    ):is( :focus
        , :active
        )
-{ border-color : var( --b, #fffc )
+{ background-color : var( --b, #fffc )
 ; background-color : white
 }
 
@@ -255,13 +256,16 @@ head
 
 /* animations */
 @keyframes rainbow {
-00.00% { color : var( --red ) ; border-color : var( --red ) }
-16.66% { color : var( --sun ) ; border-color : var( --sun ) }
-33.33% { color : var( --lime ) ; border-color : var( --lime ) }
-50.00% { color : var( --blue ) ; border-color : var( --blue ) }
-66.66% { color : var( --rose ) ; border-color : var( --rose ) }
-83.33% { color : var( --honey ) ; border-color : var( --honey ) }
-100.0% { color : var( --red ) ; border-color : var( --red ) }
+00.00% { color : var( --red ) ; background-color : var( --red ) }
+16.66% { color : var( --sun ) ; background-color : var( --sun ) }
+33.33% { color : var( --lime ) ; background-color : var( --lime ) }
+50.00% { color : var( --blue ) ; background-color : var( --blue ) }
+66.66% { color : var( --rose ) ; background-color : var( --rose ) }
+83.33% { color : var( --honey ) ; background-color : var( --honey ) }
+100.0% { color : var( --red ) ; background-color : var( --red ) }
+}
+.bg-rainbow
+{ animation : 18s linear infinite running rainbow
 }
 
 main
