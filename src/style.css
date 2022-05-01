@@ -12,12 +12,14 @@
 ; --black       : #000
 ; --black-near  : #111
 ; --black-tr-15 : #0002
+; --black-tr-20 : #0003
 ; --black-tr-45 : #0007
 ; --gray-dark   : #333
 ; --gray-light  : #ccc
 ; --gray-true   : #808080
 ; --white       : #fff
 ; --white-near  : #aaa
+; --white-tr-20 : #fff3
 ; --white-tr-75 : #fffc
 ; --white-tr-90 : #fffe
 
@@ -126,7 +128,7 @@ a:any-link
 
 .pill
 { color : var( --c, --text )
-; border : 0.15rem solid var(--white)
+; border : 0.15rem solid var(--white-tr-75)
 ; padding : 0.125rem 0.75rem
 ; box-shadow : 0 0.5rem 1.5rem 0.125rem var(--black-tr-15)
 ; background-color : var( --white-tr-75 )
@@ -184,6 +186,58 @@ a:any-link
 ; background-color : var(--white)
 }
 
+main
+{ min-width : 20rem
+; flex : 3
+; flex-grow : 999
+}
+
+article img
+{ max-width : 100% }
+
+nav
+{ justify-content : start
+; align-content : start
+; flex : 1
+; gap : 3rem
+; padding-top : 8rem
+}
+
+aside
+{ flex : 1
+; gap : 3rem
+; padding-top : 8rem
+}
+
+.nowrap
+{ flex-wrap : nowrap
+; word-wrap : normal
+; white-space : pre
+}
+
+.round
+{ border-radius : var(--border-radius) }
+
+
+/* hidden */
+head
+, title
+, style
+, script
+, [hidden]
+, [type=hidden]
+, .hidden
+, summary::-webkit-details-marker
+{ display : none }
+
+[disabled]
+, .disabled
+{ opacity : 0.5
+; cursor : not-allowed
+; pointer-events : none
+}
+
+
 /* colors */
 ::placeholder
 { color : var( --gray-true ) }
@@ -226,62 +280,37 @@ a:any-link
 .youtube    { --b : #f008 }
 
 
-/* hidden */
-head
-, title
-, style
-, script
-, [hidden]
-, [type=hidden]
-, .hidden
-, summary::-webkit-details-marker
-{ display : none }
-
-[disabled]
-, .disabled
-{ opacity : 0.5
-; cursor : not-allowed
-; pointer-events : none
+/* animations */
+@keyframes rainbow-bg {
+00.00% { background-color : var( --red ) }
+16.66% { background-color : var( --sun ) }
+33.33% { background-color : var( --lime ) }
+50.00% { background-color : var( --blue ) }
+66.66% { background-color : var( --rose ) }
+83.33% { background-color : var( --honey ) }
+100.0% { background-color : var( --red ) }
+}
+@keyframes gray-text {
+from { color : var(--black-tr-45); border-color: var(--white-tr-20) }
+to   { color : var(--white-tr-75); border-color: var(--black-tr-20) }
+}
+@keyframes rounding {
+from { border-radius : 3rem }
+  to { border-radius : 0rem }
 }
 
-main
-{ min-width : 20rem
-; flex : 3
-; flex-grow : 999
-}
 
-article img
-{ max-width : 100% }
-
-nav
-{ justify-content : start
-; align-content : start
-; flex : 1
-; gap : 3rem
-; padding-top : 8rem
-}
-
-aside
-{ flex : 1
-; gap : 3rem
-; padding-top : 8rem
-}
-
-.nowrap
-{ flex-wrap : nowrap
-; word-wrap : normal
-; white-space : pre
-}
-
-.round
-{ border-radius : var( --border-radius ) }
-
+/* themes */
+@media (prefers-color-scheme : light)
+{}
 .theme-light
 , input#theme-light
 { background-color : var(--white) }
 .theme-light .round
 { border-radius : 0.5rem }
 
+@media (prefers-color-scheme : neutral)
+{}
 input#theme-neutral
 { background-color : var(--gray-light) }
 .theme-neutral
@@ -294,6 +323,9 @@ input#theme-neutral
              , background-color 3s
 }
 
+
+@media (prefers-color-scheme : dark)
+{}
 .theme-dark
 , input#theme-dark
 { background-color : #000 }
@@ -323,45 +355,39 @@ input#theme-neutral
 ; color : var(--gray-light)
 }
 
+@media (prefers-color-scheme : colorful)
+{}
 input#theme-colorful
-{ background : url('icon.png') no-repeat
+{ background : url('icon.png') 50% 50% no-repeat
 ; background-size : 100% 100%
 }
 .theme-colorful
 { animation : 20s linear infinite rainbow-bg }
 .theme-colorful .round
-{ animation : 10s ease-in-out infinite alternate rounding
-            , 20s linear -10s infinite rainbow-bg
+{ opacity : 0.8
+; animation : 10s ease-in-out infinite alternate rounding
+            , 20s linear -2s infinite rainbow-bg
             , 5s linear infinite alternate gray-text
 }
 .theme-colorful .icon
-{ animation : 9s ease-in-out infinite alternate rounding }
+{ animation : 10s ease-in-out infinite alternate rounding }
 
-/* animations */
-@keyframes rainbow-bg {
-00.00% { background-color : var( --red ) }
-16.66% { background-color : var( --sun ) }
-33.33% { background-color : var( --lime ) }
-50.00% { background-color : var( --blue ) }
-66.66% { background-color : var( --rose ) }
-83.33% { background-color : var( --honey ) }
-100.0% { background-color : var( --red ) }
-}
-@keyframes gray-text {
-from { color : var( --black ); border-color: #fff3 }
-to   { color : var( --white ); border-color: #0003 }
-}
-@keyframes rounding {
-from { border-radius : 3rem }
-  to { border-radius : 0rem }
+.theme-colorful
+   :is( a
+      , input
+      ):hover
+{ box-shadow : 0 0 0 0.125rem var( --b, #808080 )
+; opacity : 0.9
+; color : var(--black-tr-45) !important
 }
 
-/* themes */
-@media (prefers-color-scheme : light)
-{}
-@media (prefers-color-scheme : neutral)
-{}
-@media (prefers-color-scheme : dark)
-{}
-@media (prefers-color-scheme : colorful)
-{}
+.theme-colorful
+   :is( a
+      , input
+      ):is( :focus
+          , :active
+          )
+{ box-shadow : 0 0 0 0.125rem var( --b, #ccc )
+; opacity : 1
+; color : var(--black-tr-45) !important
+}
