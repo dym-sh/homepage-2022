@@ -67,6 +67,7 @@
               , border-color 1s
               , border-radius 2s
               , background-color 3s
+              , box-shadow 0.5s
 ; font-family : 'Kadwa'
               , 'DejaVu Sans'
               , 'PT Sans'
@@ -176,6 +177,7 @@ a:any-link
 { border-color : var( --b, var(--white-tr-75) )
 ; background-color : var(--white-tr-90)
 ; color : var(--black-tr-45)
+; box-shadow : 0 0 0 0.125rem var( --b, var(--white-tr-75) )
 }
 
 :is( a
@@ -185,6 +187,7 @@ a:any-link
        )
 { border-color : var( --b, var(--white-tr-75) )
 ; background-color : var(--white)
+; box-shadow : 0 0 0 0.25rem var( --b, var(--white) )
 }
 
 main
@@ -265,20 +268,20 @@ head
 .twitter    { --b : var( --blue ) }
 .reddit     { --b : var( --petals ) }
 .instagram  { --b : var( --sand ) }
-.behance    { --b : #00ff3380 }
-.figma      { --b : #6200ed80 }
-.dribbble   { --b : #ea4c8980 }
+.behance    { --b : #00ff33aa }
+.figma      { --b : #6200edaa }
+.dribbble   { --b : #ea4c89aa }
 .github     { --b : var( --gray-dark ) }
 .codepen    { --b : var( --gray-true ) }
 .gitlab     { --b : var( --gray-true ) }
-.npm        { --b : #ea203980 }
-.soundcloud { --b : #f508 }
-.linkedin   { --b : #0a66c280 }
-.xing       { --b : #0698a080 }
-.polywork   { --b : #4a1ae680 }
+.npm        { --b : #ea2039aa }
+.soundcloud { --b : #f50a }
+.linkedin   { --b : #0a66c2aa }
+.xing       { --b : #0698a0aa }
+.polywork   { --b : #4a1ae6aa }
 .cv         { --b : var( --gray-dark ) }
 .steam      { --b : var( --gray-dark ) }
-.youtube    { --b : #f008 }
+.youtube    { --b : #f00a }
 
 
 /* animations */
@@ -326,6 +329,7 @@ input#theme-neutral
              , border-color 1s
              , border-radius 2s ease-in
              , background-color 3s
+             , box-shadow 0.5s
 }
 
 
@@ -346,7 +350,7 @@ input#theme-neutral
    :is( a
       , input
       ):hover
-{ box-shadow : 0 0 0 0.125rem var( --b, #808080 )
+{ box-shadow : 0 0 0 0.25rem var( --b, #808080 )
 ; color : var(--gray-true)
 }
 
@@ -356,7 +360,7 @@ input#theme-neutral
       ):is( :focus
           , :active
           )
-{ box-shadow : 0 0 0 0.125rem var( --b, #ccc )
+{ box-shadow : 0 0 0 0.25rem var( --b, #ccc )
 ; color : var(--gray-light)
 }
 
@@ -371,7 +375,7 @@ input#theme-colorful
 .theme-colorful .round
 { mix-blend-mode : luminosity
 ; filter : contrast(0.75)
-; animation : 10s ease-in-out infinite alternate rounding
+; animation : 15s ease-in-out infinite alternate rounding
             , 30s linear -5s infinite rainbow-bg
             , 5s ease-in-out infinite alternate gray-text
             , 5s ease-in-out infinite alternate gray-border
