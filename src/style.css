@@ -13,6 +13,7 @@
 ; --black-near  : #111
 ; --black-tr-15 : #0002
 ; --black-tr-20 : #0003
+; --black-tr-40 : #0006
 ; --black-tr-45 : #0007
 ; --gray-dark   : #333
 ; --gray-light  : #ccc
@@ -43,9 +44,9 @@
 ; --sun          : #ff3
 ; --teal         : #0cc
 ; --turquoise    : #42f8bc
-; --yellow       : #f4e7a3
-; --yellow-150   : #7a7351
-; --yellow-light : #e6da74
+; --sand         : #f4e7a3
+; --sand-150     : #7a7351
+; --sand-light   : #e6da74
 }
 
 
@@ -137,7 +138,7 @@ a:any-link
 .icon
 { height : 3rem
 ; width : 3rem
-; box-shadow : 0 0 0 0.125rem var( --bg )
+; box-shadow : 0 0 0 0.075rem var(--black-tr-40)
 ; overflow : hidden
 }
 
@@ -244,7 +245,7 @@ head
 
 .gray       { --b : var( --gray-true ) }
 .graphics   { --b : var( --red ) }
-.photos     { --b : var( --yellow ) }
+.photos     { --b : var( --sand ) }
 .memes      { --b : var( --lime ) }
 .web        { --b : var( --blue ) }
 .typography { --b : var( --rose ) }
@@ -263,7 +264,7 @@ head
 .email      { --b : var( --honey ) }
 .twitter    { --b : var( --blue ) }
 .reddit     { --b : var( --petals ) }
-.instagram  { --b : var( --yellow ) }
+.instagram  { --b : var( --sand ) }
 .behance    { --b : #00ff3380 }
 .figma      { --b : #6200ed80 }
 .dribbble   { --b : #ea4c8980 }
@@ -291,8 +292,12 @@ head
 100.0% { background-color : var( --red ) }
 }
 @keyframes gray-text {
-from { color : var(--black-tr-45); border-color: var(--white-tr-20) }
-to   { color : var(--white-tr-75); border-color: var(--black-tr-20) }
+from { color : var(--black-tr-45) }
+to   { color : var(--white-tr-75) }
+}
+@keyframes gray-border {
+from { border-color: var(--white-tr-20) }
+to   { border-color: var(--black-tr-20) }
 }
 @keyframes rounding {
 from { border-radius : 3rem }
@@ -362,12 +367,14 @@ input#theme-colorful
 ; background-size : 100% 100%
 }
 .theme-colorful
-{ animation : 20s linear infinite rainbow-bg }
+{ animation : 30s linear infinite rainbow-bg }
 .theme-colorful .round
-{ opacity : 0.8
+{ mix-blend-mode : luminosity
+; filter : contrast(0.75)
 ; animation : 10s ease-in-out infinite alternate rounding
-            , 20s linear -2s infinite rainbow-bg
-            , 5s linear infinite alternate gray-text
+            , 30s linear -5s infinite rainbow-bg
+            , 5s ease-in-out infinite alternate gray-text
+            , 5s ease-in-out infinite alternate gray-border
 }
 .theme-colorful .icon
 { animation : 10s ease-in-out infinite alternate rounding }

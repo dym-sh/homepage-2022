@@ -36,8 +36,18 @@
 
 <nav class='enclosure col'>
   <fieldset class='round box col'>
-    <input checked type='radio' class='round icon' name='view' value='browse' id='view-browse'>
-    <input type='radio' class='round icon' name='view' value='presentation' id='view-presentation'>
+    <input type='radio'
+      name='view' value='browse'
+      id='view-browsing'
+      class='round icon'
+      title='Switch to a browsing mode'
+      >
+    <input type='radio'
+      name='view' value='presentation'
+      id='view-presentation'
+      class='round icon'
+      title='Switch to a presentation mode'
+      >
   </fieldset>
 
   <fieldset class='round box col'>
@@ -45,22 +55,27 @@
       name='theme' value='dark'
       id='theme-dark'
       class='round icon'
-      title='Switch to a dark theme'>
-    <input checked type='radio'
+      title='Switch to a dark theme'
+      >
+    <input type='radio'
       name='theme' value='neutral'
       id='theme-neutral'
       class='round icon'
-      title='Switch to a neutral theme'>
+      title='Switch to a neutral theme'
+      checked
+      >
     <input type='radio'
       name='theme' value='light'
       id='theme-light'
       class='round icon'
-      title='Switch to a light theme'>
+      title='Switch to a light theme'
+      >
     <input type='radio'
       name='theme' value='colorful'
       id='theme-colorful'
       class='round icon'
-      title='Switch to a colorful theme'>
+      title='Switch to a colorful theme'
+      >
   </fieldset>
 
 </nav>
